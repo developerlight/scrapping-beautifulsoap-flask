@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Berita Terkini</title>
+
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css')}}"
+    crossorigin="anonymous">
+  <meta name="theme-color" content="#7952b3">
+
+  <!-- link boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/detail_news.css">
+  <link rel="stylesheet" href="/static/styl.css">
+  <link rel="stylesheet" href="/static/icofont/icofont.min.css ">
+</head>
+
+<body>
+  <header class="top-header">
+    <div class="header-1">
+      <div class="container">
+        <div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="date_element">
+                <span class="date_part">
+                  <i class="icofont-calendar"></i><span class="date">10/10/2020</span>
+                </span>
+                <i class="icofont-clock-time"></i><span class="time">08:25:30</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="user_element">
+                <a href="#"><i class="icofont-mic"></i><span class="options">Voice</span></a>
+                <a href="#"><i class="icofont-ui-message"></i><span class="options">Message</span></a>
+                <a href="#"><i class="icofont-info-circle"></i><span class="options">Notifications</span></a>
+                <a href="#"><i class="icofont-video"></i><span class="options">Go to Live</span></a>
+                <a href="#"><i class="icofont-plus-circle"></i><span class="options">Post</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-2">
+      <div class="container">
+        <div>
+          <div class="row navbar navbar-expand-lg navbar-light bg-light">
+            <div class="co-md-4">
+              <a class="navbar-brand" href="/">@NEWS SCRAPING</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-3">
+      <div class="container">
+        <div class="catagory">
+          <span class="catagory_single"><a href="#"><i class="icofont-newspaper"><span class="catagory_name">Breaking
+                  News</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-brand-slideshare"><span
+                  class="catagory_name">National</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-ui-flight"><span
+                  class="catagory_name">International</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-racing-flag"><span
+                  class="catagory_name">Politics</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-read-book-alt"><span
+                  class="catagory_name">Education</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-doctor"><span
+                  class="catagory_name">Health</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-runner-alt-1"><span
+                  class="catagory_name">Sports</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-paper"><span
+                  class="catagory_name">Business</span></i></a></span>
+          <span class="catagory_single"><a href="#"><i class="icofont-fire-burn"><span
+                  class="catagory_name">Trending</span></i></a></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="pembungkus_berita">
+    {% block body %}
+    <h6>
+      <small class="text-muted">
+        {{ news[0]['tag']|safe }}
+      </small>
+    </h6>
+    <h1 class="judul">{{ news[0]['title'] }}</h1>
+    <h6>
+      <small class="text-muted">
+        {{ news[0]['time'] |safe}}
+      </small>
+    </h6>
+    <div class="credit">
+      {{ news[0]['credit']|safe }}
+    </div>
+    <div class="image-news">
+      <img src="{{ news[0]['img'] }}" alt="">
+      <h6>
+        <small class="text-muted">
+          {{ news[0]['img_capt'] }}
+        </small>
+      </h6>
+    </div>
+    <div class="desk">
+      <div class="content">
+        {{ news[0]['konten'] | safe }}
+      </div>
+    </div>
+
+    {% endblock%}
+  </div>
+</body>
+
+</html>

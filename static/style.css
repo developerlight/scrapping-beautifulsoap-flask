@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.pembungkus {
+    padding-top: 6%;
+    background-color: rgb(228, 225, 220);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Mengizinkan baris berikutnya ketika tidak cukup lebar */
+}
+
+.column {
+    flex: 1;
+    /* Setiap kolom mengambil 1/3 lebar di desktop */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Menyertakan padding dalam lebar */
+}
+
+/* CSS untuk gambar */
+.image-container {
+    margin-bottom: 20px;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.accordion a {
+    text-decoration: none;
+    color: #313131;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accordion a:hover {
+    color: blue;
+    transition: 0.3s;
+}
+
+.kompas:hover {
+    box-shadow: 0px 0px 85px -1px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0px 0px 85px -1px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 85px -1px rgba(0, 0, 0, 0.22);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.kompas {
+    align-items: center;
+}
+
+.kompas img {
+    padding-left: 30px;
+}
+
+.kompas a {
+    text-decoration: none;
+    color: #313131;
+    font-family: 'Roboto', sans-serif;
+}
+
+.kompas a:hover {
+    color: blue;
+    transition: 0.3s;
+}
+
+.latar p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.latar a {
+    color: aliceblue;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.latar:hover {
+    background-color: rgba(209, 208, 208, 0.438);
+    height: 120px;
+    transition: 0.3s;
+}
+
+.latar a:hover {
+    color: rgb(50, 50, 50);
+    transition: 0.3s;
+}
+
+.button a{
+    color: #fff;
+}
+
+.button a:hover{
+    color: #fff;
+}
+
+
+/* Media query untuk tampilan mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Mengubah menjadi satu kolom di bawah 768px */
+    }
+
+    .column {
+        flex: auto;
+        /* Setiap kolom mengambil lebar penuh di mobile */
+    }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Berita Terkini</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css')}}" crossorigin="anonymous">
+    <meta name="theme-color" content="#7952b3">
+  </head>
+  <body>
+    {% block body %}
+        <h5>{{ biodata[0]['name'] }}</h5>
+        <h1>{{ biodata[0]['job'] }}</h1>
+        <div class="deskripsi">
+            {{ biodata[0]['deskripsi'] | safe }}
+        </div>
+    {% endblock%}
+  </body>
+</html>
